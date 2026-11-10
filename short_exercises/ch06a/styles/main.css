@@ -56,10 +56,13 @@ header {
 /* the styles for the main element */
 main {
 	clear: left;
+	display: flex;
 }
 
 /* the styles for the section */
 section {
+	flex-basis: 75%;
+	min-width: 0;
 	& h1 {
 		color: var(--primary-color);
 	}
@@ -69,11 +72,19 @@ section {
 article {
 	& img {
 		border: 1px solid var(--dark);
+		float: left;
+		width: 42%;
+		max-width: 100%;
+		height: auto;
+		margin-right: 1em;
+		margin-bottom: .5em;
 	}
 }
 
 /* the styles for the aside */
 aside {
+	flex-basis: 25%;
+	order: -1;
 	& h2 {
 		color: var(--primary-color);
 	}
@@ -89,5 +100,11 @@ footer {
 		text-align: center;
 		color: white;
 		padding-bottom: 0; 
+	}
+}
+
+@media screen and (max-width: 600px) {
+	main {
+		flex-direction: column;
 	}
 }
